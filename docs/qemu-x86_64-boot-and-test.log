@@ -1,0 +1,394 @@
+c[?7l[2J[0mSeaBIOS (version rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1EFD1C40+1EF31C40 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM..c[?7l[2JLinux version 6.1.24 (root@f2df4f9ff31d) (x86_64-buildroot-linux-gnu-gcc.br_real (Buildroot 2025.02-dirty) 13.3.0, GNU ld (GNU Binutils) 2.43.1) #7 SMP PREEMPT_DYNAMIC Sat Jul 11 11:22:53 UTC 2026
+Command line: console=ttyS0 isolcpus=1 nohz_full=1 rcu_nocbs=1
+x86/fpu: x87 FPU will use FXSAVE
+signal: max sigframe size: 1040
+BIOS-provided physical RAM map:
+BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+BIOS-e820: [mem 0x0000000000100000-0x000000001ffdcfff] usable
+BIOS-e820: [mem 0x000000001ffdd000-0x000000001fffffff] reserved
+BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+NX (Execute Disable) protection: active
+SMBIOS 2.8 present.
+DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+tsc: Fast TSC calibration using PIT
+tsc: Detected 999.836 MHz processor
+last_pfn = 0x1ffdd max_arch_pfn = 0x400000000
+x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+found SMP MP-table at [mem 0x000f54b0-0x000f54bf]
+ACPI: Early table checksum verification disabled
+ACPI: RSDP 0x00000000000F52D0 000014 (v00 BOCHS )
+ACPI: RSDT 0x000000001FFE2389 000034 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: FACP 0x000000001FFE2235 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: DSDT 0x000000001FFE0040 0021F5 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: FACS 0x000000001FFE0000 000040
+ACPI: APIC 0x000000001FFE22A9 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: HPET 0x000000001FFE2329 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: WAET 0x000000001FFE2361 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+ACPI: Reserving FACP table memory at [mem 0x1ffe2235-0x1ffe22a8]
+ACPI: Reserving DSDT table memory at [mem 0x1ffe0040-0x1ffe2234]
+ACPI: Reserving FACS table memory at [mem 0x1ffe0000-0x1ffe003f]
+ACPI: Reserving APIC table memory at [mem 0x1ffe22a9-0x1ffe2328]
+ACPI: Reserving HPET table memory at [mem 0x1ffe2329-0x1ffe2360]
+ACPI: Reserving WAET table memory at [mem 0x1ffe2361-0x1ffe2388]
+Zone ranges:
+  DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+  DMA32    [mem 0x0000000001000000-0x000000001ffdcfff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000001000-0x000000000009efff]
+  node   0: [mem 0x0000000000100000-0x000000001ffdcfff]
+Initmem setup node 0 [mem 0x0000000000001000-0x000000001ffdcfff]
+On node 0, zone DMA: 1 pages in unavailable ranges
+On node 0, zone DMA: 97 pages in unavailable ranges
+On node 0, zone DMA32: 35 pages in unavailable ranges
+ACPI: PM-Timer IO Port: 0x608
+ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+ACPI: Using ACPI (MADT) for SMP configuration information
+ACPI: HPET id: 0x8086a201 base: 0xfed00000
+smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[mem 0x20000000-0xfffbffff] available for PCI devices
+Booting paravirtualized kernel on bare hardware
+clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+setup_percpu: NR_CPUS:64 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+percpu: Embedded 43 pages/cpu s135528 r8192 d32408 u1048576
+Built 1 zonelists, mobility grouping on.  Total pages: 128733
+Kernel command line: console=ttyS0 isolcpus=1 nohz_full=1 rcu_nocbs=1
+Housekeeping: nohz unsupported. Build with CONFIG_NO_HZ_FULL
+Unknown kernel command line parameters "nohz_full=1 rcu_nocbs=1", will be passed to user space.
+Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 480676K/523756K available (12289K kernel code, 945K rwdata, 2524K rodata, 11716K init, 1548K bss, 42820K reserved, 0K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+Dynamic Preempt: none
+rcu: Preemptible hierarchical RCU implementation.
+rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=2.
+rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+NR_IRQS: 4352, nr_irqs: 56, preallocated irqs: 16
+rcu: srcu_init: Setting srcu_struct sizes based on contention.
+Console: colour VGA+ 80x25
+printk: console [ttyS0] enabled
+ACPI: Core revision 20220331
+clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+APIC: Switch to symmetric I/O mode setup
+..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+tsc: Marking TSC unstable due to TSCs unsynchronized
+Calibrating delay loop (skipped), value calculated using timer frequency.. 1999.67 BogoMIPS (lpj=3999344)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+process: using AMD E400 aware idle routine
+Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Spectre V2 : Mitigation: Retpolines
+Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+Freeing SMP alternatives memory: 32K
+smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+Performance Events: PMU not available due to virtualization, using software events only.
+rcu: Hierarchical SRCU implementation.
+rcu: 	Max phase no-delay instances is 1000.
+smp: Bringing up secondary CPUs ...
+x86: Booting SMP configuration:
+.... node  #0, CPUs:      #1
+calibrate_delay_direct() dropping max bogoMips estimate 1 = 4397000
+calibrate_delay_direct() dropping max bogoMips estimate 2 = 4258500
+smp: Brought up 1 node, 2 CPUs
+smpboot: Max logical packages: 1
+smpboot: Total of 2 processors activated (3886.00 BogoMIPS)
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+thermal_sys: Registered thermal governor 'step_wise'
+thermal_sys: Registered thermal governor 'user_space'
+cpuidle: using governor ladder
+PCI: Using configuration type 1 for base access
+mtrr: your CPUs had inconsistent fixed MTRR settings
+mtrr: your CPUs had inconsistent variable MTRR settings
+mtrr: your CPUs had inconsistent MTRRdefType settings
+mtrr: probably your BIOS does not setup all CPUs.
+mtrr: corrected configuration.
+ACPI: Added _OSI(Module Device)
+ACPI: Added _OSI(Processor Device)
+ACPI: Added _OSI(3.0 _SCP Extensions)
+ACPI: Added _OSI(Processor Aggregator Device)
+ACPI: 1 ACPI AML tables successfully acquired and loaded
+ACPI: Interpreter enabled
+ACPI: PM: (supports S0 S3 S5)
+ACPI: Using IOAPIC for interrupt routing
+PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+PCI: Using E820 reservations for host bridge windows
+ACPI: Enabled 2 GPEs in block 00 to 0F
+ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments HPX-Type3]
+acpi PNP0A03:00: PCIe port services disabled; not requesting _OSC control
+acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+pci_bus 0000:00: root bus resource [mem 0x20000000-0xfebfffff window]
+pci_bus 0000:00: root bus resource [mem 0x100000000-0x17fffffff window]
+pci_bus 0000:00: root bus resource [bus 00-ff]
+pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+pci 0000:00:01.1: reg 0x20: [io  0xc0c0-0xc0cf]
+pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+pci 0000:00:03.0: reg 0x14: [io  0xc080-0xc0bf]
+pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+pci 0000:00:04.0: [1af4:1001] type 00 class 0x010000
+pci 0000:00:04.0: reg 0x10: [io  0xc000-0xc07f]
+pci 0000:00:04.0: reg 0x14: [mem 0xfebf1000-0xfebf1fff]
+pci 0000:00:04.0: reg 0x20: [mem 0xfe000000-0xfe003fff 64bit pref]
+ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+iommu: Default domain type: Translated 
+iommu: DMA domain TLB invalidation policy: lazy mode 
+SCSI subsystem initialized
+ACPI: bus type USB registered
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+PCI: Using ACPI for IRQ routing
+pci 0000:00:02.0: vgaarb: setting as boot VGA device
+pci 0000:00:02.0: vgaarb: bridge control possible
+pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+vgaarb: loaded
+clocksource: Switched to clocksource hpet
+pnp: PnP ACPI init
+pnp: PnP ACPI: found 6 devices
+clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP bind hash table entries: 4096 (order: 5, 131072 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+pci_bus 0000:00: resource 7 [mem 0x20000000-0xfebfffff window]
+pci_bus 0000:00: resource 8 [mem 0x100000000-0x17fffffff window]
+pci 0000:00:01.0: PIIX3: Enabling Passive Release
+pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+PCI: CLS 0 bytes, default 64
+workingset: timestamp_bits=62 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+fuse: init (API version 7.37)
+NET: Registered PF_ALG protocol family
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+io scheduler mq-deadline registered
+io scheduler kyber registered
+input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+ACPI: button: Power Button [PWRF]
+ACPI: \_SB_.LNKD: Enabled at IRQ 11
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+ACPI: bus type drm_connector registered
+bochs-drm 0000:00:02.0: vgaarb: deactivate vga console
+Console: switching to colour dummy device 80x25
+[drm] Found bochs VGA, ID 0xb0c5.
+[drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfebf0000.
+[drm] Found EDID data blob.
+[drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+fbcon: bochs-drmdrmfb (fb0) is primary device
+Console: switching to colour frame buffer device 160x50
+bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+loop: module loaded
+virtio_blk virtio0: 2/0/0 default/read/poll queues
+virtio_blk virtio0: [vda] 1032192 512-byte logical blocks (528 MB/504 MiB)
+ vda: vda1
+scsi host0: ata_piix
+scsi host1: ata_piix
+ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc0c0 irq 14
+ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc0c8 irq 15
+usbcore: registered new interface driver usb-storage
+i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+serio: i8042 KBD port at 0x60,0x64 irq 1
+serio: i8042 AUX port at 0x60,0x64 irq 12
+fail to initialize ptp_kvm
+input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_INET6 protocol family
+Segment Routing with IPv6
+In-situ OAM (IOAM) with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered PF_PACKET protocol family
+IPI shorthand broadcast: enabled
+ALSA device list:
+  No soundcards found.
+
+true
+mkdir -p /mnt/ko
+mount -t vfat /dev/vda1 /mnt/ko
+ls /mnt/ko
+busybox insmod /mnt/ko/andrea_mind_core.ko target_cpu=1
+sleep 3
+dmesg | busybox tail -20
+sleep 30
+dmesg | busybox tail -10
+ata2: found unknown device (class 0)
+ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Freeing unused kernel image (initmem) memory: 11716K
+Write protecting the kernel read-only data: 18432k
+Freeing unused kernel image (text/rodata gap) memory: 2044K
+Freeing unused kernel image (rodata/data gap) memory: 1572K
+Run /init as init process
+
+=== Andrea — disco cifrato ===
+Ricerca disco principale...
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+ERRORE: nessun disco grande trovato dopo 20s.
+/bin/sh: can't access tty; job control turned off
+~ # 
+~ # true
+~ # mkdir -p /mnt/ko
+~ # mount -t vfat /dev/vda1 /mnt/ko
+~ # ls /mnt/ko
+[1;32mandrea_mind_core.ko[m
+~ # busybox insmod /mnt/ko/andrea_mind_core.ko target_cpu=1
+andrea_mind_core: loading out-of-tree module taints kernel.
+andrea_mind_core: caricamento, CPU target=1
+andrea_mind_core: thread avviato su CPU 1
+~ # sleep 3
+andrea_mind_core: 100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 200 blocchi FP completati, acc=9992459 (x1000)
+~ # dmesg | busybox tail -20
+ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Freeing unused kernel image (initmem) memory: 11716K
+Write protecting the kernel read-only data: 18432k
+Freeing unused kernel image (text/rodata gap) memory: 2044K
+Freeing unused kernel image (rodata/data gap) memory: 1572K
+Run /init as init process
+  with arguments:
+    /init
+  with environment:
+    HOME=/
+    TERM=linux
+    nohz_full=1
+    rcu_nocbs=1
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+andrea_mind_core: loading out-of-tree module taints kernel.
+andrea_mind_core: caricamento, CPU target=1
+andrea_mind_core: thread avviato su CPU 1
+andrea_mind_core: 100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 200 blocchi FP completati, acc=9992459 (x1000)
+~ # sleep 30
+andrea_mind_core: 300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1200 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 1900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2200 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3200 blocchi FP completati, acc=9992459 (x1000)
+~ # dmesg | busybox tail -10
+andrea_mind_core: 2300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 2900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3200 blocchi FP completati, acc=9992459 (x1000)
+~ # andrea_mind_core: 3300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 3900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4200 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 4900 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5000 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5100 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5200 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5300 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5400 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5500 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5600 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5700 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5800 blocchi FP completati, acc=9992459 (x1000)
+andrea_mind_core: 5900 blocchi FP completati, acc=9992459 (x1000)
+qemu-system-x86_64: terminating on signal 15 from pid 1209 (<unknown process>)
