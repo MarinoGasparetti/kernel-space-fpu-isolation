@@ -8,12 +8,15 @@ each corresponding to one architectural or experimental milestone, written
 and expanded as the work progresses rather than after the fact. Chapters are
 added, not rewritten — a later chapter may revise an earlier chapter's
 conclusions, but the earlier chapter's account of what was tried and found
-stays intact as a historical record.
+stays intact as a historical record. (Chapter 3, for instance, deliberately
+supersedes Chapter 1's core-isolation approach; Chapter 1 remains as the
+record of what that approach was and why it was tried.)
 
 ## Chapters
 
 - [`paper/chapter-01-kernel-fpu-isolation.md`](paper/chapter-01-kernel-fpu-isolation.md) — **The obstacle and the mechanism.** Sustained floating-point computation is structurally awkward inside the Linux kernel because `kernel_fpu_begin()`/`kernel_fpu_end()` disable preemption and were designed for short bursts. Resolution: dedicate one physical core via `isolcpus`/`nohz_full`/`rcu_nocbs`, pin a kernel thread to it, and hold the FPU open freely because nothing else is scheduled there. Verified in QEMU and on real hardware — ~2.1×10¹⁰ floating-point operations in-kernel, zero lockups.
 - [`paper/chapter-02-llm-in-kernel.md`](paper/chapter-02-llm-in-kernel.md) — **A complete Llama2 language model running inside the kernel.** A dependency-free transformer engine written from scratch in plain C (no libm — transcendental functions reimplemented by hand and validated against the system library), loading real trained weights, executing every transformer operation in kernel space, and generating coherent text. Verified byte-identical across userspace, QEMU, and real physical hardware; ~45–64 tokens/second as a scalar single-core baseline. Includes a deliberate, documented rejection of the "port ggml" approach in favor of a kernel-native engine.
+- [`paper/chapter-03-symbiotic-multicore.md`](paper/chapter-03-symbiotic-multicore.md) — **Symbiotic multi-core inference, superseding Chapter 1's isolation.** Static core isolation (`isolcpus`) is reconsidered and deliberately abandoned: it cannot be dynamic and it partitions the machine rather than sharing it. Replaced with kernel threads on shared cores, short bracketed FPU sections, and `cond_resched` — letting the scheduler decide moment-to-moment how much of the machine the inference occupies. Row-partitioned matrix multiplication across a kernel-thread pool, bit-identical to serial (hash-verified). Real-hardware results (2.67×–2.77× on 4 cores) plus an honest memory-bandwidth ceiling on large models. Consolidated into the deployed image with no bundled weights (engine permanent, model interchangeable).
 
 ## Directory layout
 
