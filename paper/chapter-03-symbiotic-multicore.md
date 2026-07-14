@@ -150,6 +150,18 @@ lockups.
   the static-isolation configuration actively conflicts with the symbiotic
   design.
 
+![isolcpus vs symbiotic scaling](../docs/benchmark-02-isolcpus-vs-symbiotic.png)
+
+*With `isolcpus` the speedup peaks at 2 threads and then degrades as the
+fourth thread oversubscribes the three schedulable cores; removing it lets
+all four participate and scaling grows monotonically.*
+
+![Larger models parallelize better](../docs/benchmark-04-model-size-scaling.png)
+
+*The 110M model scales better than the 15M: its larger matmuls amortize the
+per-matmul synchronization overhead the small model's tiny matmuls spend a
+large fraction of their time paying.*
+
 ### 4.1 The Honest Ceiling: Memory Bandwidth
 
 On this particular hardware (a low-end i3), the 110M model's parallel
@@ -162,6 +174,12 @@ the machine, and it is exactly the ceiling the synthetic benchmark predicted
 (Section 4). It improves with quantization (smaller weights, less bandwidth
 per matmul) or with hardware that has more memory bandwidth — precisely the
 regime a larger deployment target would occupy.
+
+![Memory-bandwidth ceiling](../docs/benchmark-03-bandwidth-ceiling.png)
+
+*A synthetic large matmul (8192×8192) scales near-linearly to ~4 threads and
+then flattens as the threads saturate the memory bus reading weights that do
+not fit in cache — the physical ceiling, not a code limitation.*
 
 ## 5. Deployment
 

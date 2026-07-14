@@ -19,19 +19,11 @@ record of what that approach was and why it was tried.)
 - [`paper/chapter-03-symbiotic-multicore.md`](paper/chapter-03-symbiotic-multicore.md) — **Symbiotic multi-core inference, superseding Chapter 1's isolation.** Static core isolation (`isolcpus`) is reconsidered and deliberately abandoned: it cannot be dynamic and it partitions the machine rather than sharing it. Replaced with kernel threads on shared cores, short bracketed FPU sections, and `cond_resched` — letting the scheduler decide moment-to-moment how much of the machine the inference occupies. Row-partitioned matrix multiplication across a kernel-thread pool, bit-identical to serial (hash-verified). Real-hardware results (2.67×–2.77× on 4 cores) plus an honest memory-bandwidth ceiling on large models. Consolidated into the deployed image with no bundled weights (engine permanent, model interchangeable).
 - [`paper/chapter-04-simd.md`](paper/chapter-04-simd.md) — **Vectorizing the inner loop (SIMD) inside the kernel.** The dot product is vectorized to 8 multiply-adds per instruction (AVX2) / 4 (NEON) inside the existing per-thread FPU sections, for a 3.6× single-core and 5.3× combined speedup over scalar serial on real hardware, output byte-identical, zero crashes. Documents the two kernel-specific obstacles — the compiler emitting SIMD outside FPU-guarded regions (solved by isolating the vector code in its own translation unit, objdump-verified), and the absence of `immintrin.h` in the kernel build (solved with GCC vector extensions) — and why greedy decoding preserves byte-identical output despite non-associative vectorized reduction. Consolidated and re-verified after reflash.
 
-## Benchmarks
-
-[`docs/benchmarks.md`](docs/benchmarks.md) — graphs generated from the real
-measurements across all chapters: the optimization cascade (scalar →
-multi-core → SIMD, 5.3× on real hardware), the isolcpus-vs-symbiotic
-scaling evidence, the memory-bandwidth ceiling on large matmuls, and
-model-size scaling.
-
 ## Directory layout
 
 - `paper/` — the chapters
 - `appendix/` — full source: the Chapter 1 FPU-isolation module (`andrea_mind_core.*`), and the Chapter 2 inference engine (`andrea_llm_userspace.c` reference, `andrea_llm_kmod.c` kernel module, `andrea_llm_math.h` hand-written math, `test_math.c` validation, `andrea_llm.Makefile` dual-architecture build)
-- `docs/` — raw logs from real runs: Chapter 1's QEMU and physical-hardware dmesg captures, and Chapter 2's physical-hardware LLM generation log (`asus-real-hardware-llm.log`)
+- `docs/` — raw logs from real runs (Chapter 1's QEMU and physical-hardware dmesg captures, Chapter 2's physical-hardware LLM generation log) and the benchmark graphs embedded in Chapters 3 and 4, generated from the real measurements by `make_benchmarks.py`
 
 ## One-paragraph summary
 

@@ -115,6 +115,12 @@ ten full generations per configuration, scalar serial as the baseline:
 | **SIMD, 1 thread** | 9 s | **3.6×** |
 | **SIMD, 4 threads** | 6 s | **5.3×** |
 
+![Optimization cascade](../docs/benchmark-01-optimization-cascade.png)
+
+*The full path from the scalar single-threaded baseline through Chapter 3's
+multi-core to this chapter's SIMD, on the same hardware: 5.3× end to end,
+and SIMD on one core (9 s) beating scalar on all four (11 s).*
+
 Three observations:
 
 - **SIMD alone gives 3.6× on a single core** — real AVX2 on a modest CPU.
