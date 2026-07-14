@@ -1,10 +1,13 @@
-obj-m += andrea_llm_kmod.o
+obj-m += andrea_llm.o
+andrea_llm-objs := andrea_llm_kmod.o andrea_llm_simd_kern.o
 
 ifeq ($(ARCH),x86_64)
 CFLAGS_andrea_llm_kmod.o += -msse -msse2
+CFLAGS_andrea_llm_simd_kern.o += -mavx2 -mfma
 endif
 ifeq ($(ARCH),arm64)
 CFLAGS_REMOVE_andrea_llm_kmod.o += -mgeneral-regs-only
+CFLAGS_REMOVE_andrea_llm_simd_kern.o += -mgeneral-regs-only
 endif
 
 KDIR_X86_64 ?= /work/buildroot/output/build/linux-6.1.24

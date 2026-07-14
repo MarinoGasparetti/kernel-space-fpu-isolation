@@ -27,6 +27,8 @@
 
 #include "andrea_llm_math.h"
 
+extern float andrea_dot(const float *a, const float *b, int n);
+
 static char *model_path = "/root/stories15M.bin";
 module_param(model_path, charp, 0444);
 
@@ -85,14 +87,10 @@ static DECLARE_COMPLETION(g_all_done);
 
 static void do_part(int p)
 {
-    int i, k;
+    int i;
     int r0 = g_part_start[p], r1 = g_part_end[p];
-    for (i = r0; i < r1; i++) {
-        float val = 0.0f;
-        float *wr = g_w + (long)i * g_n;
-        for (k = 0; k < g_n; k++) val += wr[k] * g_x[k];
-        g_xout[i] = val;
-    }
+    for (i = r0; i < r1; i++)
+        g_xout[i] = andrea_dot(g_w + (long)i * g_n, g_x, g_n);
 }
 
 static int worker_fn(void *arg)
@@ -161,14 +159,10 @@ static void matmul(float *xout, float *x, float *w, int n, int d)
     int parts, per, p;
 
     if (!g_active || d < (g_pool_size + 1) * 4) {
-        int i, k;
+        int i;
         ANDREA_FPU_BEGIN();
-        for (i = 0; i < d; i++) {
-            float val = 0.0f;
-            float *wr = w + (long)i * n;
-            for (k = 0; k < n; k++) val += wr[k] * x[k];
-            xout[i] = val;
-        }
+        for (i = 0; i < d; i++)
+            xout[i] = andrea_dot(w + (long)i * n, x, n);
         ANDREA_FPU_END();
         return;
     }
