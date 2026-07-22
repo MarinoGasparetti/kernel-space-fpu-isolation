@@ -1,5 +1,14 @@
 # Kernel-Space FPU Isolation: An Experimental Case Study in Running Inference Compute — and a Full Language Model — Inside a Linux Kernel
 
+> **Archived.** This case study is superseded by
+> [`kernel-resident-llm`](https://github.com/MarinoGasparetti/kernel-resident-llm),
+> which includes updated, corrected versions of all four chapters below
+> (a kernel module correctness pass for large-model scale) plus two further
+> chapters: an interactive kernel-resident chat interface, and a controlled
+> experiment on model capacity growth versus adapter-based specialization.
+> This repository is kept, unmodified otherwise, as the historical record of
+> the work through Chapter 4.
+
 This is a private, working case study documenting a progressive attempt to
 run AI inference computation, and ultimately a complete transformer language
 model, directly inside a Linux kernel — as kernel-resident code rather than
